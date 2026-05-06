@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nida Firdous | Systems Engineer | DevOps | Ansible | Linux | Ontario</title>
-<meta name="description" content="Nida Firdous - Systems Engineer with 3+ years Ansible automation, GitLab CI/CD, Linux infrastructure, and embedded systems experience. Cambridge, ON. Valid PGWP. Available immediately.">
+<title>Nida Firdous | Infrastructure Automation Engineer | Ansible | AWX | Linux | Ontario</title>
+<meta name="description" content="Nida Firdous - Infrastructure Automation Engineer. TCS Contextual Master Award winner. 3+ years Ansible AWX, GitLab CI/CD, Palo Alto firewall automation, CyberArk. Cambridge, ON. Valid PGWP.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -21,6 +21,8 @@
   --green-bg: #dcfce7;
   --gold:     #92400e;
   --gold-bg:  #fef9c3;
+  --amber:    #b45309;
+  --amber-bg: #fffbeb;
   --serif:    'DM Serif Display', Georgia, serif;
   --sans:     'DM Sans', system-ui, sans-serif;
 }
@@ -37,13 +39,47 @@ body { font-family: var(--sans); background: var(--white); color: var(--ink); fo
 .nav-links .nav-cta { background: var(--navy); color: white; font-weight: 600; }
 .nav-links .nav-cta:hover { background: var(--blue); color: white; }
 
+/* ── AWARD HERO BANNER ── */
+.award-hero {
+  background: linear-gradient(135deg, #78350f 0%, #92400e 50%, #b45309 100%);
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.award-hero-icon { font-size: 28px; flex-shrink: 0; }
+.award-hero-text { color: white; }
+.award-hero-text strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  margin-bottom: 2px;
+}
+.award-hero-text span { font-size: 13px; color: #fde68a; }
+.award-hero-badge {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.35);
+  color: #fef9c3;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
 /* HERO */
-.hero { background: var(--navy); color: white; padding: 90px 20px 72px; text-align: center; position: relative; overflow: hidden; }
+.hero { background: var(--navy); color: white; padding: 80px 20px 64px; text-align: center; position: relative; overflow: hidden; }
 .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, #2563a840, transparent); pointer-events: none; }
 .hero-eyebrow { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #93c5fd; background: rgba(147,197,253,0.12); border: 1px solid rgba(147,197,253,0.3); padding: 5px 14px; border-radius: 20px; margin-bottom: 20px; }
 .hero h1 { font-family: var(--serif); font-size: clamp(36px, 6vw, 58px); font-weight: 400; letter-spacing: -0.5px; line-height: 1.1; margin-bottom: 18px; }
 .hero-sub { font-size: 16px; color: #93c5fd; font-weight: 400; margin-bottom: 12px; letter-spacing: 0.3px; }
-.hero-desc { max-width: 560px; margin: 0 auto 32px; font-size: 15px; color: #bfdbfe; line-height: 1.7; }
+.hero-desc { max-width: 580px; margin: 0 auto 32px; font-size: 15px; color: #bfdbfe; line-height: 1.7; }
 .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 36px; }
 .pill { font-size: 12px; font-weight: 500; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #dbeafe; padding: 5px 14px; border-radius: 20px; }
 .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
@@ -55,10 +91,13 @@ body { font-family: var(--sans); background: var(--white); color: var(--ink); fo
 
 /* STAT BAR */
 .stat-bar { background: var(--mist); border-bottom: 1px solid var(--rule); padding: 22px 32px; display: flex; justify-content: center; flex-wrap: wrap; }
-.stat { text-align: center; padding: 10px 36px; border-right: 1px solid var(--rule); }
+.stat { text-align: center; padding: 10px 32px; border-right: 1px solid var(--rule); }
 .stat:last-child { border-right: none; }
 .stat-num { font-family: var(--serif); font-size: 28px; color: var(--navy); display: block; line-height: 1; margin-bottom: 4px; }
 .stat-label { font-size: 12px; color: var(--muted); font-weight: 500; }
+/* Gold stat for award */
+.stat.stat-award .stat-num { color: #92400e; }
+.stat.stat-award .stat-label { color: #b45309; font-weight: 600; }
 
 /* LAYOUT */
 .wrap { max-width: 1020px; margin: 0 auto; padding: 0 24px; }
@@ -70,11 +109,16 @@ body { font-family: var(--sans); background: var(--white); color: var(--ink); fo
 /* ABOUT */
 .about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 48px; align-items: start; }
 .about-text p { color: var(--muted); margin-bottom: 16px; line-height: 1.75; }
-.about-badges { display: flex; flex-direction: column; gap: 12px; }
+.about-badges { display: flex; flex-direction: column; gap: 18px; } /* changed from 12 to 18px */
 .badge-item { background: var(--mist); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; }
 .badge-icon { width: 36px; height: 36px; background: var(--sky); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
 .badge-info strong { display: block; font-size: 13px; color: var(--navy); font-weight: 600; }
 .badge-info span { font-size: 12px; color: var(--muted); }
+/* Gold badge variant for award */
+.badge-item.badge-award { background: var(--gold-bg); border-color: #fde68a; }
+.badge-item.badge-award .badge-icon { background: #fef3c7; }
+.badge-item.badge-award strong { color: #78350f; }
+.badge-item.badge-award span { color: #92400e; }
 
 /* SKILLS */
 .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -84,24 +128,97 @@ body { font-family: var(--sans); background: var(--white); color: var(--ink); fo
 .skill-tag { font-size: 12px; font-weight: 500; background: white; border: 1px solid var(--rule); color: var(--navy); padding: 4px 10px; border-radius: 5px; }
 .skill-tag.core { background: var(--navy); color: white; border-color: var(--navy); }
 
-/* EXPERIENCE */
+/* ── EXPERIENCE: WORKSTREAM LAYOUT ── */
 .exp-item { padding: 28px 0; border-bottom: 1px solid var(--rule); }
 .exp-item:last-child { border-bottom: none; }
 .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; gap: 20px; }
-.exp-title { font-size: 17px; font-weight: 600; color: var(--navy); }
+.exp-title { font-size: 18px; font-weight: 700; color: var(--navy); }
 .exp-company { font-size: 14px; color: var(--blue); font-weight: 500; margin-bottom: 2px; }
 .exp-dates { font-size: 12px; color: var(--muted); font-weight: 500; white-space: nowrap; text-align: right; padding-top: 3px; }
-.exp-bullets { margin-top: 12px; padding-left: 0; list-style: none; }
+
+/* workstream block */
+.workstream { margin-top: 20px; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+.workstream-header {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--mist); padding: 12px 18px;
+  border-bottom: 1px solid var(--rule);
+}
+.workstream-header.ws-firewall {
+  background: linear-gradient(90deg, #fff7ed, #fffbeb);
+  border-bottom-color: #fde68a;
+}
+.workstream-header.ws-gitlab {
+  background: linear-gradient(90deg, #eff6ff, #f0f5fc);
+}
+.workstream-header.ws-provisioning {
+  background: linear-gradient(90deg, #f0fdf4, #f0f5fc);
+}
+.ws-icon { font-size: 20px; flex-shrink: 0; }
+.ws-title-group { flex: 1; }
+.ws-title { font-size: 13px; font-weight: 700; color: var(--navy); }
+.ws-subtitle { font-size: 12px; color: var(--muted); margin-top: 1px; }
+
+/* firewall highlight badge */
+.ws-highlight {
+  font-size: 11px; font-weight: 700;
+  background: #b45309; color: white;
+  padding: 3px 10px; border-radius: 12px;
+  flex-shrink: 0; white-space: nowrap;
+}
+/* award badge inside workstream */
+.ws-award-badge {
+  font-size: 11px; font-weight: 700;
+  background: #92400e; color: #fef9c3;
+  padding: 3px 10px; border-radius: 12px;
+  flex-shrink: 0; white-space: nowrap;
+}
+
+.workstream-body { padding: 14px 18px 16px; background: white; }
+.exp-bullets { list-style: none; padding: 0; }
 .exp-bullets li { position: relative; padding-left: 18px; margin-bottom: 7px; font-size: 14px; color: var(--muted); line-height: 1.6; }
 .exp-bullets li::before { content: ''; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--blue); }
+/* firewall bullet accent */
+.ws-firewall-bullets li::before { background: #b45309; }
+
 .exp-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
 .exp-tag { font-size: 11px; font-weight: 600; background: var(--sky); color: var(--blue); padding: 3px 9px; border-radius: 4px; }
+
+/* ── FIREWALL SPOTLIGHT CARD ── */
+.firewall-spotlight {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 2px solid #fbbf24;
+  border-radius: 12px;
+  padding: 22px 24px;
+}
+.firewall-spotlight-header {
+  display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;
+}
+.firewall-spotlight-icon { font-size: 32px; flex-shrink: 0; margin-top: 2px; }
+.firewall-spotlight-title { font-size: 16px; font-weight: 700; color: #78350f; margin-bottom: 3px; }
+.firewall-spotlight-sub { font-size: 13px; color: #92400e; }
+.firewall-metrics {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px;
+}
+.firewall-metric {
+  background: white; border: 1px solid #fde68a; border-radius: 8px;
+  padding: 12px 14px; text-align: center;
+}
+.firewall-metric-num { font-family: var(--serif); font-size: 24px; color: #b45309; display: block; line-height: 1; margin-bottom: 4px; }
+.firewall-metric-label { font-size: 11px; color: #92400e; font-weight: 600; }
+.firewall-bullets { list-style: none; padding: 0; }
+.firewall-bullets li { position: relative; padding-left: 18px; margin-bottom: 6px; font-size: 13px; color: #78350f; line-height: 1.55; }
+.firewall-bullets li::before { content: '🔥'; position: absolute; left: 0; top: 0; font-size: 10px; }
+.firewall-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.firewall-tech span { font-size: 11px; font-weight: 600; background: #92400e; color: white; padding: 3px 10px; border-radius: 4px; }
 
 /* AWARDS */
 .awards-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .award-card { background: var(--gold-bg); border: 1px solid #fde68a; border-radius: 10px; padding: 18px; text-align: center; }
+.award-card.award-top { background: linear-gradient(135deg, #fef9c3, #fef3c7); border-color: #f59e0b; border-width: 2px; }
 .award-yr { font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 1px; margin-bottom: 8px; }
 .award-name { font-size: 13px; font-weight: 600; color: #78350f; line-height: 1.4; }
+.award-desc { font-size: 11px; color: #92400e; margin-top: 6px; line-height: 1.4; }
 
 /* PROJECTS */
 .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -153,6 +270,7 @@ footer { background: var(--mist); border-top: 1px solid var(--rule); text-align:
   .edu-row { grid-template-columns: 1fr; }
   .avail-bar { flex-direction: column; text-align: center; }
   .stat { padding: 10px 20px; }
+  .firewall-metrics { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 520px) {
   .hero { padding: 60px 20px 50px; }
@@ -161,6 +279,7 @@ footer { background: var(--mist); border-top: 1px solid var(--rule); text-align:
   .stat-bar { flex-direction: column; align-items: center; }
   .stat { border-right: none; border-bottom: 1px solid var(--rule); width: 100%; }
   .stat:last-child { border-bottom: none; }
+  .firewall-metrics { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -178,20 +297,30 @@ footer { background: var(--mist); border-top: 1px solid var(--rule); text-align:
   </div>
 </nav>
 
+<!-- ══ AWARD HERO BANNER (new) ══ -->
+<div class="award-hero">
+  <div class="award-hero-icon">🏆</div>
+  <div class="award-hero-text">
+    <strong>TCS Contextual Master Award Winner &mdash; 2023</strong>
+    <span>Top engineer recognition at Tata Consultancy Services &bull; Story published company-wide for GitLab HA &amp; GEO innovations</span>
+  </div>
+  <div class="award-hero-badge">Top Performer</div>
+</div>
+
 <header class="hero">
   <div class="hero-eyebrow">Valid PGWP &nbsp;|&nbsp; No Sponsorship Required &nbsp;|&nbsp; Immediate Start</div>
   <h1>Nida Firdous</h1>
-  <p class="hero-sub">Systems Engineer &nbsp;/&nbsp; DevOps &nbsp;/&nbsp; Infrastructure Automation &nbsp;/&nbsp; Linux</p>
-  <p class="hero-desc">3+ years building enterprise automation at Tata Consultancy Services using Ansible, AWX, and GitLab CI/CD. 2025 Conestoga College Embedded Systems graduate. Based in Cambridge, ON.</p>
+  <p class="hero-sub">Infrastructure Automation Engineer &nbsp;/&nbsp; Ansible &amp; AWX Specialist &nbsp;/&nbsp; Linux Systems &nbsp;/&nbsp; GitLab CI/CD</p>
+  <p class="hero-desc">3+ years engineering enterprise automation at Tata Consultancy Services — managing 1,200+ nodes, automating firewall policy lifecycles, and leading GitLab HA &amp; GEO disaster recovery. TCS Contextual Master Award winner. Based in Cambridge, ON.</p>
   <div class="hero-pills">
     <span class="pill">Ansible &amp; AWX</span>
     <span class="pill">GitLab CI/CD</span>
     <span class="pill">Infrastructure as Code</span>
+    <span class="pill">Palo Alto PAN-OS</span>
+    <span class="pill">CyberArk Vault</span>
     <span class="pill">Python</span>
     <span class="pill">Linux Advanced</span>
-    <span class="pill">CyberArk</span>
-    <span class="pill">Palo Alto PAN-OS</span>
-    <span class="pill">Embedded C</span>
+    <span class="pill">DRBD / HA / GEO</span>
   </div>
   <div class="hero-btns">
     <a href="mailto:nida.firdous@outlook.com" class="btn btn-white">Contact Me</a>
@@ -203,8 +332,9 @@ footer { background: var(--mist); border-top: 1px solid var(--rule); text-align:
 <div class="stat-bar">
   <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Years Enterprise Experience</span></div>
   <div class="stat"><span class="stat-num">90%</span><span class="stat-label">Manual Effort Reduced via Ansible</span></div>
+  <div class="stat"><span class="stat-num">1,200+</span><span class="stat-label">Nodes Under Automation</span></div>
+  <!-- <div class="stat stat-award"><span class="stat-num">🏆</span><span class="stat-label">TCS Contextual Master Award</span></div> -->
   <div class="stat"><span class="stat-num">3.85</span><span class="stat-label">GPA, Conestoga College 2025</span></div>
-  <div class="stat"><span class="stat-num">4</span><span class="stat-label">TCS Awards Won</span></div>
   <div class="stat"><span class="stat-num">Now</span><span class="stat-label">Available to Start</span></div>
 </div>
 
@@ -216,16 +346,24 @@ footer { background: var(--mist); border-top: 1px solid var(--rule); text-align:
     </div>
     <div class="about-grid reveal">
       <div class="about-text">
-        <p>I am a Systems Engineer who spent three years at Tata Consultancy Services building and operating enterprise automation infrastructure. I authored modular Ansible playbooks and AWX workflows that reduced manual IT operations by 70 to 90 percent across multiple streams, led GitLab High Availability and GEO disaster recovery environments, automated Palo Alto Networks firewall policy management, and integrated secure CI/CD pipelines with CyberArk credential management.</p>
-        <p>In 2025 I graduated from Conestoga College's Embedded Systems Development program with a 3.85 GPA, adding hands-on Python, Embedded C, Raspberry Pi Linux, STM32, VHDL, and Verilog experience to my automation background. This combination of enterprise DevOps depth and embedded systems breadth makes me a versatile engineer ready to contribute immediately.</p>
-        <p>I am based in Cambridge, ON, hold a valid Post-Graduation Work Permit (PGWP), and require zero employer sponsorship. I am actively seeking DevOps, Linux Systems Administration, or Infrastructure Automation roles in Ontario.</p>
+        <p>I am an Infrastructure Automation Engineer who spent three years at Tata Consultancy Services building enterprise-scale automation across three distinct domains: user provisioning and IT operations, GitLab High Availability and CI/CD pipeline infrastructure, and Palo Alto Networks firewall policy automation. My Ansible playbooks and AWX workflows reduced manual IT operations by 70–90% and my GitLab GEO disaster recovery work was recognised with the TCS Contextual Master Award — the company's top engineering performance honour — and published as a company-wide case study.</p>
+        <p>In 2025 I graduated from Conestoga College's Embedded Systems Development program with a 3.85 GPA, adding hands-on Python, Embedded C, Raspberry Pi Linux, STM32, VHDL, and Verilog experience. This combination of enterprise DevOps depth and embedded systems breadth makes me a versatile engineer ready to contribute immediately.</p>
+        <p>I am based in Cambridge, ON, hold a valid Post-Graduation Work Permit (PGWP), and require zero employer sponsorship. I am actively seeking Infrastructure Automation, DevOps, or Linux Systems Engineering roles in Ontario.</p>
       </div>
       <div class="about-badges">
-        <div class="badge-item"><div class="badge-icon">📍</div><div class="badge-info"><strong>Cambridge, Ontario</strong><span>Open to GTA, KW Region, Remote</span></div></div>
+        <!-- <div class="badge-item badge-award">
+          <div class="badge-icon">🏆</div>
+          <div class="badge-info">
+            <strong>TCS Contextual Master Award</strong>
+            <span>Top engineer recognition &bull; Story published company-wide</span>
+          </div>
+        </div> -->
+        <div class="badge-item"><div class="badge-icon">📍</div><div class="badge-info"><strong>Cambridge, Ontario</strong><span>Open to GTA, Ottawa, KW Region, Remote</span></div></div>
         <div class="badge-item"><div class="badge-icon">🇨🇦</div><div class="badge-info"><strong>Valid PGWP</strong><span>Full-time anywhere in Canada, no sponsorship</span></div></div>
         <div class="badge-item"><div class="badge-icon">⚡</div><div class="badge-info"><strong>Immediate Joiner</strong><span>Available without notice period</span></div></div>
         <div class="badge-item"><div class="badge-icon">🎓</div><div class="badge-info"><strong>Conestoga College, 2025</strong><span>Embedded Systems Development, GPA 3.85</span></div></div>
         <div class="badge-item"><div class="badge-icon">🏢</div><div class="badge-info"><strong>Tata Consultancy Services</strong><span>3 years, Systems Engineer, 4 awards</span></div></div>
+
       </div>
     </div>
   </div>
@@ -323,51 +461,152 @@ footer { background: var(--mist); border-top: 1px solid var(--rule); text-align:
             <div class="exp-title">Systems Engineer</div>
             <div class="exp-company">Tata Consultancy Services (TCS) &mdash; Hyderabad, India</div>
           </div>
-          <div class="exp-dates">Nov 2020 &ndash; Jan 2024<br><span style="font-size:11px;color:var(--muted);">3 years 2 months</span></div>
+          <div class="exp-dates">Nov 2020 &ndash; Dec 2023<br><span style="font-size:11px;color:var(--muted);">3 years</span></div>
         </div>
-        <ul class="exp-bullets">
-          <li>Automated 90% of user provisioning workflows using Ansible playbooks and AWX, integrating with Active Directory, REST APIs, and YAML configuration management, reducing turnaround time by 70%.</li>
-          <li>Led GitLab High Availability setup and GEO disaster recovery configuration across distributed Linux nodes; resolved DRBD split-brain issues, improving deployment reliability by 30%.</li>
-          <li>Built and maintained GitLab CI/CD pipelines including runner registration, variable management, and post-upgrade integrity validation for production infrastructure.</li>
-          <li>Automated Palo Alto Networks firewall security rule lifecycle using Ansible PAN-OS modules, reducing policy implementation time by 80% and improving deployment accuracy by 90%.</li>
-          <li>Automated Splunk ITSM Change Request lifecycle using Ansible playbooks, improving SLA compliance by 40%.</li>
-          <li>Integrated CyberArk vault credentials into Ansible workflows for secure secrets management across all automation pipelines.</li>
-          <li>Deployed BMC TrueSight Patrol Agents across Linux and Windows nodes using Ansible, enabling 24/7 production server monitoring.</li>
-          <li>Collaborated with cross-functional global teams in Agile sprints, authoring support documentation and delivering infrastructure automation across multiple use cases.</li>
-        </ul>
-        <div class="exp-tags">
+
+        <!-- WORKSTREAM 1: Provisioning -->
+        <div class="workstream" style="margin-top:20px;">
+          <div class="workstream-header ws-provisioning">
+            <div class="ws-icon">⚙️</div>
+            <div class="ws-title-group">
+              <div class="ws-title">User Provisioning &amp; IT Operations Automation</div>
+              <div class="ws-subtitle">Ansible &bull; AWX &bull; Active Directory &bull; BMC Remedy &bull; REST APIs</div>
+            </div>
+          </div>
+          <div class="workstream-body">
+            <ul class="exp-bullets">
+              <li>Managed configuration and automation for <strong>1,200+ Linux/Windows nodes</strong> using Ansible and AWX.</li>
+              <li>Automated OnePLM PRF user provisioning via Operations Manager and Active Directory, cutting turnaround time by <strong>70%</strong>.</li>
+              <li>Built Ansible playbooks for password resets, MS Teams/M365 access, group share folders, and Windchill AD access — reducing request resolution time by <strong>60–80%</strong>.</li>
+              <li>Automated TICON de-provisioning across AD groups and SQL DB, eliminating post-termination access risks.</li>
+              <li>Deployed BMC TrueSight Patrol Agents across Linux and Windows nodes using Ansible, enabling 24/7 production monitoring.</li>
+              <li>Integrated ELicMA API with Operations Manager for engineering licence provisioning (Altium Designer), streamlining licence management.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- WORKSTREAM 2: GitLab HA -->
+        <div class="workstream" style="margin-top:14px;">
+          <div class="workstream-header ws-gitlab">
+            <div class="ws-icon">🔄</div>
+            <div class="ws-title-group">
+              <div class="ws-title">GitLab HA, CI/CD Pipeline &amp; Secure Credential Integration</div>
+              <div class="ws-subtitle">GitLab HA &bull; GitLab GEO &bull; DRBD &bull; CyberArk &bull; Splunk ITSM</div>
+            </div>
+            <div class="ws-award-badge">🏆 Award-Winning Work</div>
+          </div>
+          <div class="workstream-body">
+            <ul class="exp-bullets">
+              <li>Led GitLab and Ansible Tower High Availability setup and version upgrades across distributed nodes, ensuring minimal downtime.</li>
+              <li>Implemented GitLab GEO for disaster recovery; registered GitLab Runners and managed CI/CD pipeline variables for secure, resilient workflows.</li>
+              <li>Resolved DRBD split-brain issues in GitLab HA configuration, increasing deployment reliability by <strong>30%</strong>.</li>
+              <li>Automated Splunk ITSM Change Request lifecycle (creation to closure) using Ansible playbooks, improving SLA compliance by <strong>40%</strong>.</li>
+              <li>Integrated CyberArk Vault credentials into Ansible workflows for enterprise-grade secrets management across all automation pipelines.</li>
+              <li>Authored technical documentation for GitLab upgrade procedures and automation toolchain deployment.</li>
+            </ul>
+            <div style="margin-top:12px;padding:10px 14px;background:var(--gold-bg);border:1px solid #fde68a;border-radius:6px;font-size:13px;color:#78350f;">
+              🏆 <strong>TCS Contextual Master Award (2023)</strong> &mdash; recognised for innovations in GitLab GEO &amp; High Availability. Solution published as a company-wide Contextual Master Story (2022).
+            </div>
+            <div class="exp-tags" style="margin-top:10px;">
+              <span class="exp-tag">GitLab HA</span><span class="exp-tag">GitLab GEO</span><span class="exp-tag">DRBD</span>
+              <span class="exp-tag">CyberArk</span><span class="exp-tag">Splunk</span><span class="exp-tag">Ansible</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- WORKSTREAM 3: Firewall — SPOTLIGHT -->
+        <div class="workstream" style="margin-top:14px;">
+          <div class="workstream-header ws-firewall">
+            <div class="ws-icon">🔥</div>
+            <div class="ws-title-group">
+              <div class="ws-title">Infrastructure Automation — Firewall Policy Management</div>
+              <div class="ws-subtitle">Palo Alto PAN-OS &bull; Ansible &bull; HPSM &bull; JSON Templating</div>
+            </div>
+            <div class="ws-highlight">Rare Skill</div>
+          </div>
+          <div class="workstream-body">
+            <!-- Firewall metrics -->
+            <div class="firewall-metrics">
+              <div class="firewall-metric">
+                <span class="firewall-metric-num">80%</span>
+                <span class="firewall-metric-label">Faster Rule Implementation</span>
+              </div>
+              <div class="firewall-metric">
+                <span class="firewall-metric-num">90%</span>
+                <span class="firewall-metric-label">Deployment Accuracy Gain</span>
+              </div>
+              <div class="firewall-metric">
+                <span class="firewall-metric-num">Full</span>
+                <span class="firewall-metric-label">Lifecycle Automated</span>
+              </div>
+            </div>
+            <ul class="exp-bullets ws-firewall-bullets">
+              <li>Automated the full security rule lifecycle — creation, modification, deletion — for Palo Alto Networks using <strong>Ansible PAN-OS modules</strong>.</li>
+              <li>Integrated Ansible with HPSM to automate rule approvals and change workflows, cutting implementation time by <strong>80%</strong>.</li>
+              <li>Used structured JSON inputs and templated playbooks to standardise rule creation across data centres, improving deployment accuracy by <strong>90%</strong>.</li>
+              <li>Conducted configuration validation post-deployment and maintained documentation in collaboration with global network teams.</li>
+            </ul>
+            <div class="exp-tags" style="margin-top:12px;">
+              <span class="exp-tag">Palo Alto PAN-OS</span><span class="exp-tag">Ansible</span>
+              <span class="exp-tag">HPSM</span><span class="exp-tag">JSON Templating</span><span class="exp-tag">Firewall Automation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- All tags -->
+        <div class="exp-tags" style="margin-top:16px;">
           <span class="exp-tag">Ansible</span><span class="exp-tag">AWX</span><span class="exp-tag">GitLab CI/CD</span>
           <span class="exp-tag">Python</span><span class="exp-tag">Linux</span><span class="exp-tag">CyberArk</span>
-          <span class="exp-tag">Palo Alto</span><span class="exp-tag">Splunk</span><span class="exp-tag">YAML</span>
+          <span class="exp-tag">Palo Alto</span><span class="exp-tag">Splunk</span><span class="exp-tag">YAML</span><span class="exp-tag">BMC Remedy</span>
         </div>
       </div>
-      <div class="exp-item">
+
+      <!-- Conestoga kept as academic, not a job -->
+      <div class="exp-item" style="padding-top:24px;">
         <div class="exp-header">
           <div>
-            <div class="exp-title">Embedded Systems Developer (Academic Projects)</div>
+            <div class="exp-title">Embedded Systems Developer <span style="font-size:13px;font-weight:400;color:var(--muted);">(Academic Projects)</span></div>
             <div class="exp-company">Conestoga College &mdash; Cambridge, ON</div>
           </div>
           <div class="exp-dates">Jan 2024 &ndash; Apr 2025</div>
         </div>
-        <ul class="exp-bullets">
-          <li>Designed and deployed a voice-controlled Smart Wheelchair on Raspberry Pi using Python; integrated ToF and MPU6050 sensors achieving sub-1-second command latency and 95% voice recognition accuracy across 50+ test variations.</li>
+        <ul class="exp-bullets" style="margin-top:12px;">
+          <li>Designed and deployed a voice-controlled Smart Wheelchair on Raspberry Pi using Python; achieved sub-1s command latency and 95% voice recognition accuracy across 50+ test variations.</li>
           <li>Developed Smart Fan Control System in Embedded C on Linux/STM32 with real-time sensor-based automatic and manual speed control achieving 90%+ response accuracy.</li>
           <li>Implemented Custom CPU and GPIO Controller in VHDL and Verilog; validated with testbench simulation and waveform analysis.</li>
         </ul>
-        <div class="exp-tags">
+        <div class="exp-tags" style="margin-top:10px;">
           <span class="exp-tag">Embedded C</span><span class="exp-tag">Python</span>
           <span class="exp-tag">Raspberry Pi</span><span class="exp-tag">STM32</span>
           <span class="exp-tag">VHDL</span><span class="exp-tag">Verilog</span><span class="exp-tag">Linux</span>
         </div>
       </div>
     </div>
+
+    <!-- Awards row -->
     <div style="margin-top:40px;" class="reveal">
       <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:16px;">TCS Recognition &amp; Awards</div>
       <div class="awards-row">
-        <div class="award-card"><div class="award-yr">2023</div><div class="award-name">Contextual Master Award</div></div>
-        <div class="award-card"><div class="award-yr">2022</div><div class="award-name">Contextual Master Story Published</div></div>
-        <div class="award-card"><div class="award-yr">2021</div><div class="award-name">Best Team Award</div></div>
-        <div class="award-card"><div class="award-yr">2020</div><div class="award-name">Star Performer Award</div></div>
+        <div class="award-card award-top">
+          <div class="award-yr">2023</div>
+          <div class="award-name">🏆 Contextual Master Award</div>
+          <div class="award-desc">Top engineer recognition for excellence in problem-solving &amp; system optimisation</div>
+        </div>
+        <div class="award-card award-top">
+          <div class="award-yr">2022</div>
+          <div class="award-name">📖 CM Story Published</div>
+          <div class="award-desc">GitLab GEO &amp; HA innovations published company-wide</div>
+        </div>
+        <div class="award-card">
+          <div class="award-yr">2021</div>
+          <div class="award-name">Best Team Award</div>
+          <div class="award-desc">Successful collaborative project delivery</div>
+        </div>
+        <div class="award-card">
+          <div class="award-yr">2020</div>
+          <div class="award-name">Star Performer Award</div>
+          <div class="award-desc">Excellence in automation &amp; scripting</div>
+        </div>
       </div>
     </div>
   </div>
@@ -431,10 +670,9 @@ footer { background: var(--mist); border-top: 1px solid var(--rule); text-align:
     <div style="margin-top:32px;" class="reveal">
       <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:16px;">Certifications</div>
       <div class="certs-row">
-        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">IBM IT Fundamentals</div><div class="cert-status">Completed 2026</div></div></div>
-        <div class="cert-item"><div class="cert-dot" style="background:#d97706;"></div><div><div class="cert-name">CompTIA A+</div><div class="cert-status">Expected 2026</div></div></div>
-        <div class="cert-item"><div class="cert-dot" style="background:#d97706;"></div><div><div class="cert-name">AWS Cloud Practitioner</div><div class="cert-status">In Progress</div></div></div>
+        <div class="cert-item"><div class="cert-dot" style="background:#16a34a;"></div><div><div class="cert-name">Ansible for Windows Administration</div><div class="cert-status">Completed 2026</div></div></div>
         <div class="cert-item"><div class="cert-dot" style="background:#16a34a;"></div><div><div class="cert-name">Python &mdash; HackerRank</div><div class="cert-status">Verified</div></div></div>
+        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">IBM IT Fundamentals</div><div class="cert-status">Completed</div></div></div>
       </div>
     </div>
   </div>
@@ -444,10 +682,10 @@ footer { background: var(--mist); border-top: 1px solid var(--rule); text-align:
   <div class="wrap">
     <div class="avail-bar reveal">
       <div class="avail-items">
-        <div class="avail-item"><strong>Location</strong>Cambridge, ON &bull; Open to GTA, KW, Remote</div>
+        <div class="avail-item"><strong>Location</strong>Cambridge, ON &bull; Open to GTA, Ottawa, KW, Remote</div>
         <div class="avail-item"><strong>Authorization</strong>Valid PGWP &bull; No Sponsorship Needed</div>
         <div class="avail-item"><strong>Availability</strong>Immediate Start</div>
-        <div class="avail-item"><strong>Open To</strong>DevOps &bull; Linux Admin &bull; Automation Engineer</div>
+        <div class="avail-item"><strong>Open To</strong>Infrastructure Automation &bull; DevOps &bull; Linux Systems</div>
       </div>
       <div class="avail-cta">
         <a href="mailto:nida.firdous@outlook.com" class="btn btn-white">Email Me</a>
